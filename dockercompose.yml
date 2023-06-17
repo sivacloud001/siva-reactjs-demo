@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    image: sivanandhan/dev:application-1
+    restart: always
+    ports:
+      - "80:80"
+    tty: true
+    stdin_open: true
+
