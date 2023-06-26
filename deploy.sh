@@ -8,4 +8,4 @@
 docker pull sivacloud001/dev:react-app1
 
 # Start a new container with the updated image
-docker run --rm -itd --network host -p 80:80  --name mykk sivacloud001/dev:react-app1
+docker run --rm -itd --network host -p 3000:80  --name mykk sivacloud001/dev:react-app1
