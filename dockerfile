@@ -1,21 +1,15 @@
-FROM node:14-alpine
+FROM node:16.8
 
-WORKDIR /siva
+WORKDIR /code
 
-COPY . /siva
+COPY package.json package.json
+copy package-lock.json package-lock.json
 
 RUN npm install
 
-RUN npm run build
+COPY . .
 
-##FROM nginx:latest
+CMD ["npm", "run", "start"]
 
-LABEL maintainer="sivanandhan"
-
-##COPY --from=build /siva/build /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["npm", "start"]
-
+EXPOSE 3000
 
