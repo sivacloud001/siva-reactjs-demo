@@ -4,6 +4,6 @@ services:
   app:
     image: sivacloud001/dev:react-app1
     ports:
-      - "3000:80"
+      - "80:80"
     tty: true
     stdin_open: true
