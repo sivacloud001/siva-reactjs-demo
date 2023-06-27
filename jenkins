@@ -1,0 +1,23 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git branch: 'dev', url: 'https://github.com/sivacloud001/siva-reactjs-demo.git'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh './build.sh'
+      }
+    }
+
+    stage('deploy') {
+      steps {
+        sh './deploy.sh'
+      }
+    }
+  }
+}
